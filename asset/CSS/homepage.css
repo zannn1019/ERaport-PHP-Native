@@ -1,0 +1,481 @@
+@font-face {
+    font-family: "Sansation Bold";
+    src: url(../sansation/Sansation_Bold.ttf);
+}
+@font-face {
+    font-family: "Sansation";
+    src: url(../sansation/Sansation_Regular.ttf);
+}
+@font-face {
+    font-family: "Barlow Bold";
+    src: url(../Barlow/Barlow-Bold.ttf);
+}
+@font-face {
+    font-family: "Barlow";
+    src: url(../Barlow/Barlow-Regular.ttf);
+}
+@font-face {
+    font-family: "Open Sans";
+    src: url(../Open_Sans/static/OpenSans-Light.ttf);
+}
+
+::-webkit-scrollbar-track {
+    background-color: white;
+}
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #636161;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Sansation";
+    color: inherit;
+    scroll-behavior: smooth;
+}
+body {
+    overflow-x: hidden;
+    background: rgba(0, 0, 0, 0.8) url("../img/bg_home.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-blend-mode: darken;
+}
+nav {
+    width: 100%;
+    z-index: 99;
+    position: fixed;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background: #000000a8;
+    transition: 0.6s;
+}
+
+.page-tittle {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-tittle .tittle {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    color: white;
+    flex-direction: column;
+}
+
+.judul {
+    width: 70%;
+    font-size: 52px;
+    font-family: "Barlow Bold";
+}
+
+.judul b {
+    color: #f3452c;
+    text-shadow: 1px 1px 1px black;
+}
+
+.sub-judul {
+    width: 60%;
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    font-weight: 300;
+}
+
+.title-btn {
+    display: flex;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.login-btn {
+    padding-left: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.started-btn {
+    width: 10em;
+    height: 3em;
+    margin-top: 10px;
+    color: white;
+    text-decoration: none;
+    position: relative;
+}
+
+.started-btn a {
+    background: #f3452c;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-decoration: none;
+    z-index: +1;
+    width: 100%;
+    height: 100%;
+    transition: 0.2s;
+    font-weight: 600;
+}
+
+.started-btn i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #f3452c;
+    z-index: -1;
+    background: white;
+}
+
+.started-btn a:hover {
+    transform: translate(-5px, -5px);
+}
+
+.about {
+    width: 100%;
+    height: 100vh;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about .informasi {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    float: left;
+    width: 40%;
+    height: 100%;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.informasi h1 {
+    font-family: "Barlow", sans-serif;
+    font-size: 52px;
+    line-height: 1.5em;
+}
+
+.informasi h1::after {
+    content: "";
+    display: block;
+    width: 15%;
+    height: 5px;
+    background: #f3452c;
+}
+
+.informasi p {
+    line-height: 1.5em;
+    font-family: "Open Sans";
+    font-size: 18px;
+}
+
+.about .foto {
+    position: relative;
+    width: 40%;
+    height: 100%;
+}
+
+.foto img {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    float: right;
+    left: 150px;
+    top: 120px;
+    box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+        6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+        12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+        22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+        41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05);
+    z-index: 3;
+}
+
+.foto i {
+    display: flex;
+    width: 60%;
+    height: 60%;
+    border: 5px solid black;
+    position: absolute;
+    z-index: 2;
+    right: 20px;
+    bottom: 110px;
+}
+
+video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    filter: brightness(0.5);
+    z-index: -1;
+    left: 0;
+    top: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+nav h1 {
+    font-size: 32px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.page-regis {
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    background-color: #101218;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+}
+
+.page-regis h1 {
+    font-family: "Barlow";
+    font-size: 42px;
+    position: relative;
+    padding: 20px;
+}
+.page-regis h1::after {
+    content: "";
+    display: flex;
+    width: 20%;
+    left: 40%;
+    top: 0;
+    position: absolute;
+    background-color: white;
+    height: 5px;
+}
+
+.page-regis p {
+    width: 50%;
+    text-align: center;
+    font-family: "Open Sans";
+}
+
+.benefit {
+    width: 100%;
+    height: 100vh;
+    background: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.benefit .foto {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+.benefit .foto img,
+.benefit .foto i {
+    width: 70%;
+}
+
+.benefit .foto img {
+    left: 120px;
+    border: 1px solid grey;
+}
+.benefit .foto i {
+    left: 150px;
+    bottom: 100px;
+}
+
+.benefit .informasi {
+    float: right;
+    width: 50%;
+}
+
+.benefit-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 10px;
+    overflow: hidden;
+    gap: 10px;
+}
+
+.b-list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin-top: 10px;
+}
+
+.b-list i {
+    font-size: 42px;
+    margin: 5px;
+    color: #f3452c;
+}
+
+.desc {
+    width: 90%;
+}
+
+.b-list label {
+    font-size: 24px;
+    font-family: "Barlow Bold";
+}
+.b-list p {
+    font-family: "Open Sans";
+    font-size: 16px;
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+    background: #101218;
+    color: #ffffff5e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+}
+
+footer h3 {
+    font-family: "Open Sans";
+    font-size: 18px;
+}
+
+@media only screen and (max-width: 1080px) {
+    nav {
+        padding: 20px 20px;
+    }
+    .judul {
+        font-size: 32px;
+        width: 100%;
+    }
+    .sub-judul {
+        font-size: 16px;
+        width: 100%;
+    }
+    .about {
+        flex-direction: column-reverse;
+    }
+    .about .informasi {
+        width: 90%;
+    }
+    .about .foto {
+        width: 400px;
+        height: 400px;
+    }
+    .informasi h1 {
+        font-size: 32px;
+    }
+    .informasi p {
+        font-size: 16px;
+    }
+    .foto img {
+        float: left;
+        left: 40px;
+        top: 60px;
+    }
+    .foto i {
+        right: 30px;
+        bottom: 20px;
+    }
+    .about .foto {
+        height: 70%;
+    }
+    .page-regis {
+        padding: 10px;
+    }
+    .page-regis h1 {
+        font-size: 24px;
+        text-align: center;
+    }
+    .page-regis p {
+        font-size: 16px;
+        text-align: center;
+        width: 100%;
+    }
+    .benefit {
+        flex-direction: column;
+    }
+    .benefit .foto {
+        width: 450px;
+        height: 300px;
+    }
+    .benefit .foto img {
+        left: 50px;
+    }
+    .benefit .foto i {
+        left: 70px;
+        bottom: 50px;
+    }
+    .benefit .informasi {
+        width: 90%;
+        text-align: center;
+    }
+    .benefit .informasi h1::after {
+        position: sticky;
+        left: 43%;
+    }
+    .benefit .informasi h1 {
+        font-size: 18px;
+    }
+    .benefit .informasi p {
+        font-size: 12px;
+    }
+    .b-list i {
+        font-size: 32px;
+    }
+    .b-list label {
+        font-size: 16px;
+    }
+    .b-list p {
+        font-size: 12px;
+    }
+    .b-list {
+        flex-direction: column;
+    }
+    .benefit-list {
+        overflow: hidden;
+    }
+    .desc {
+        width: 100%;
+    }
+    footer {
+        padding: 10px;
+        flex-direction: column;
+        justify-content: center;
+    }
+    footer h3 {
+        font-size: 12px;
+    }
+}

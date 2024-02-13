@@ -1,0 +1,160 @@
+@font-face {
+    font-family: "Sansation Bold";
+    src: url(../sansation/Sansation_Bold.ttf);
+}
+@font-face {
+    font-family: "Sansation";
+    src: url(../sansation/Sansation_Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "sansation";
+}
+
+.content {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 60%;
+    height: 70%;
+    box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+        6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+        12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+        22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+        41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+        100px 100px 80px rgba(0, 0, 0, 0.07);
+    border: 1px solid grey;
+    position: relative;
+    color: white;
+}
+
+.siswa,
+.guru {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background: #1f2223;
+}
+
+.form {
+    position: absolute;
+    background: white;
+    width: 50%;
+    height: 100%;
+    right: 0;
+    color: black !important;
+}
+
+.form-siswa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    background: transparent;
+    z-index: +1;
+    right: 0;
+}
+.form-guru {
+    display: flex;
+    opacity: 0;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    background: transparent;
+    z-index: +1;
+    left: 0;
+}
+
+.material-textfield {
+    position: relative;
+    width: 100%;
+}
+
+.material-textfield label {
+    position: absolute;
+    font-size: 1rem;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    color: gray;
+    padding: 0 0.3rem;
+    margin: 0 0.5rem;
+    transition: 0.1s ease-out;
+    transform-origin: left top;
+    pointer-events: none;
+}
+.material-textfield input {
+    font-size: 1rem;
+    width: 100%;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 1rem 0.7rem;
+    color: gray;
+    transition: 0.1s ease-out;
+}
+.material-textfield input:focus {
+    border-color: #6200ee;
+}
+.material-textfield input:focus + label {
+    color: #6200ee;
+    top: 0;
+    transform: translateY(-50%) scale(0.9);
+}
+.material-textfield input:not(:placeholder-shown) + label {
+    top: 0;
+    transform: translateY(-50%) scale(0.9);
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 50px;
+    gap: 10px;
+}
+input[type="submit"] {
+    width: 50%;
+    padding: 10px 20px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #1919c5;
+    transition: 0.2s;
+}
+input[type="submit"]:hover {
+    background: #1919c5;
+    color: white;
+    border: 1px solid #1919c5;
+}
+
+select {
+    width: 100%;
+    padding: 10px 20px;
+}
+
+button {
+    background: transparent;
+    border: none;
+    font-size: inherit;
+    color: #6200ee;
+    cursor: pointer;
+}
+button:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login - ERaport</title>
+        <link rel="stylesheet" href="../asset/CSS/user-login2.css" />
+    </head>
+    <body>
+        <div class="content">
+            <div class="box">
+                <div class="form form-box"></div>
+                <div class="form form-siswa">
+                    <h1>Login Siswa</h1>
+                    <form action="../ceklogin.php" method="post">
+                        <div class="material-textfield">
+                            <input placeholder=" " type="text" name="nis" />
+                            <label>NIS</label>
+                        </div>
+                        <div class="material-textfield">
+                            <input
+                                placeholder=" "
+                                type="password"
+                                name="password"
+                            />
+                            <label>Password</label>
+                        </div>
+                        <select name="semester" id="" required>
+                            <option value="">Pilih Semester</option>
+                            <option value="1">Ganjil</option>
+                            <option value="2">Genap</option>
+                        </select>
+                        <input type="submit" value="Login" name="login-siswa" />
+                    </form>
+                    <span
+                        >Bukan Siswa?
+                        <button class="switch-btn" data-ke="guru">
+                            Login sebagai guru
+                        </button></span
+                    >
+                </div>
+                <div class="form form-guru">
+                    <h1>Login Guru</h1>
+                    <form action="../ceklogin.php" method="post">
+                        <div class="material-textfield">
+                            <input placeholder=" " type="text" name="nip" />
+                            <label>NIP</label>
+                        </div>
+                        <div class="material-textfield">
+                            <input
+                                placeholder=" "
+                                type="password"
+                                name="password"
+                            />
+                            <label>Password</label>
+                        </div>
+                        <input type="submit" value="Login" name="login-guru" />
+                    </form>
+                    <span
+                        >Bukan Guru?
+                        <button class="switch-btn" data-ke="siswa">
+                            Login sebagai siswa
+                        </button></span
+                    >
+                </div>
+                <div class="siswa">
+                    <img src="../asset/img/201818.png" alt="" width="200px" />
+                    <br />
+                    <h1>Login Siswa</h1>
+                    <p>
+                        Anda akan di arahkan ke halaman siswa jika login sebagai
+                        siswa
+                    </p>
+                </div>
+                <div class="guru">
+                    <img src="../asset/img/194935.png" alt="" width="200px" />
+                    <br />
+                    <h1>Login Guru</h1>
+                    <p>
+                        Anda akan di arahkan ke halaman guru jika login sebagai
+                        guru
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script src="../asset/jquery-3.6.4.min.js"></script>
+        <script>
+            $(".switch-btn").click(function () {
+                let ke = $(this).data("ke");
+                if (ke === "guru") {
+                    $(".form-box").animate({ right: "50%" });
+                    $(".form-siswa").animate({ opacity: "0" });
+                    $(".form-siswa").css("opacity", "0");
+                    setTimeout(() => {
+                        $(".form-guru").animate({ opacity: "1" });
+                        $(".form-guru").css("opacity", "1");
+                    }, 300);
+                } else {
+                    $(".form-box").animate({ right: "0" });
+                    $(".form-guru").animate({ opacity: "0" });
+                    $(".form-guru").css("opacity", "0");
+                    setTimeout(() => {
+                        $(".form-siswa").animate({ opacity: "1" });
+                        $(".form-siswa").css("opacity", "1");
+                    }, 300);
+                }
+            });
+        </script>
+    </body>
+</html>

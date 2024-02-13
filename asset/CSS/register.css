@@ -1,0 +1,282 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"); */
+@font-face {
+    font-family: "Sansation Bold";
+    src: url(../sansation/Sansation_Bold.ttf);
+}
+@font-face {
+    font-family: "Sansation";
+    src: url(../sansation/Sansation_Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Sansation";
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: #1f2223;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    max-width: 700px;
+    width: 700px;
+    height: 600px;
+    background: #242729;
+    border: 1px solid #33373a;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+        6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+        12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+        22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+        41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+        100px 100px 80px rgba(0, 0, 0, 0.07);
+}
+.container .title {
+    font-size: 36px;
+    font-weight: 500;
+    position: relative;
+    color: white;
+}
+.container .title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    border-radius: 5px;
+    background: white;
+}
+.content form .user-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+    color: white;
+}
+form .user-details .input-box {
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+form .input-box span.details {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.user-details .input-box input:not(input[type="file"]) {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid white;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:not(input[type="file"]):valid {
+    border-color: white;
+    background-color: white;
+    color: white;
+}
+.user-details .input-box input:not(input[type="file"]):valid {
+    color: black;
+}
+.user-details .input-box input::placeholder {
+    color: rgb(170, 170, 170);
+}
+.user-details .input-box input:focus::placeholder {
+    color: rgb(255, 255, 255);
+}
+form .gender-details .gender-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+}
+form .category {
+    display: flex;
+    width: 60%;
+    color: white;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+form .category label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+form .category label .dot {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background: #d9d9d9;
+    border: 5px solid transparent;
+    transition: all 0.3s ease;
+}
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three {
+    background: #9b59b6;
+    border-color: #d9d9d9;
+}
+form input[type="radio"] {
+    display: none;
+}
+form .button {
+    height: 45px;
+    margin: 10px 0;
+    width: 100%;
+}
+form .button input {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid white;
+    background: transparent;
+}
+form .button input:hover {
+    /* transform: scale(0.99); */
+    background: white;
+    color: black;
+}
+@media (max-width: 584px) {
+    .container {
+        max-width: 100%;
+    }
+    form .user-details .input-box {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    form .category {
+        width: 100%;
+    }
+    .content form .user-details {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+    .user-details::-webkit-scrollbar {
+        width: 5px;
+    }
+}
+@media (max-width: 459px) {
+    .container .content .category {
+        flex-direction: column;
+    }
+}
+.center form {
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+form .txt_field {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+.txt_field input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+.txt_field label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.txt_field span::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: white;
+    transition: 0.5s;
+}
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label {
+    top: -5px;
+    color: white;
+}
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before {
+    width: 100%;
+}
+.txt_field i {
+    color: #94a1b2;
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+input {
+    color: rgb(15, 15, 15);
+}
+.pass {
+    margin: -5px 0 20px 5px;
+    color: #a6a6a6;
+    cursor: pointer;
+}
+.pass:hover {
+    text-decoration: underline;
+}
+
+.login_link {
+    margin: 10px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #666666;
+}
+
+.login_link a {
+    color: white;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+input[type="file"]::file-selector-button {
+    margin-right: 20px;
+    border: none;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: black;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+}
+input[type="file"]:valid {
+    color: white;
+    font-size: 16px;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background: #afafaf;
+}
